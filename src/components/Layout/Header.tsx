@@ -18,7 +18,7 @@ export function Header() {
         <ul className="flex items-center justify-between gap-4">
           {navList.map(item => (
             <li key={item.text}>
-              <Link className="font-medium uppercase" href={item.url}>
+              <Link className="font-medium uppercase text-brand-700/80" href={item.url}>
                 {item.text}
               </Link>
             </li>
