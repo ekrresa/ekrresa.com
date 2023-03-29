@@ -5,6 +5,9 @@ module.exports = {
   content: ['src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      boxShadow: {
+        post: 'rgba(0, 0, 0, 0.1) 0px 4px 12px',
+      },
       colors: {
         smoke: {
           50: '#f4f5f4',
