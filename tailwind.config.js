@@ -37,6 +37,25 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-inter)', ...fontFamily.sans],
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            'code::before': { content: '' },
+            'code::after': { content: '' },
+            blockquote: {
+              fontWeight: '400',
+              borderLeftWidth: '0.4rem',
+            },
+            'blockquote p:first-of-type::before': {
+              content: '',
+              color: 'red',
+            },
+            'blockquote p:last-of-type::after': {
+              content: '',
+            },
+          },
+        },
+      },
     },
   },
   plugins: [require('@tailwindcss/typography')],

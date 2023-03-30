@@ -84,20 +84,24 @@ Here’s how you get up and running with NextAuth.js:
 1. Install NextAuth.js, `npm install next-auth` or `yarn add next-auth`
 2. Add a `NEXTAUTH_URL` environment variable. Set it to the canonical url of your project. For example:
 
+```js
    NEXTAUTH_URL=http://localhost:3000
+```
 
 3. Create a `[…nextauth].js` file in the `pages/api/auth` folder. This is where you configure NextAuth.js.
 4. In your `_app.js` file, wrap your app with the SessionProvider.
 
-   import { SessionProvider } from "next-auth/react";
+```js
+import { SessionProvider } from 'next-auth/react'
 
-   export default function App({ Component, pageProps }) {
-   return (
-   <SessionProvider session={pageProps.session}>
-   <Component {...pageProps} />
-   </SessionProvider>
-   );
-   }
+export default function App({ Component, pageProps }) {
+  return (
+    <SessionProvider session={pageProps.session}>
+      <Component {...pageProps} />
+    </SessionProvider>
+  )
+}
+```
 
 ### Configuration
 
