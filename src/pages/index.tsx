@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Post, allPosts } from 'contentlayer/generated'
 import dayjs from 'dayjs'
 
+import { Seo } from '@/components/Seo'
 import { parseDate } from '@/lib/date'
 import { siteMetadata } from '@/lib/metadata'
 
@@ -12,7 +13,11 @@ export default function Home(props: Props) {
   const { posts } = props
 
   return (
-    <>
+    <Seo
+      title="Ochuko Ekrresa – Software Engineer, Frontend Developer, Writer"
+      description={siteMetadata.description}
+      image={siteMetadata.socialBanner}
+    >
       <section className="mt-32 md:mt-48 md:px-12 md:pb-12">
         <p className="ml-1 text-xl font-semibold uppercase text-brand-700/80">
           ochuko ekrresa
@@ -62,7 +67,7 @@ export default function Home(props: Props) {
           ))}
         </ul>
       </section>
-    </>
+    </Seo>
   )
 }
 
