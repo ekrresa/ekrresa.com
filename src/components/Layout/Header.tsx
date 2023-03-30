@@ -6,7 +6,7 @@ import LogoLight from '~/public/logo-light.svg'
 
 const navList = [
   { text: 'blog', url: '/blog' },
-  { text: 'projects', url: '#projects' },
+  { text: 'projects', url: '/projects' },
   { text: 'about', url: '/about' },
 ]
 
