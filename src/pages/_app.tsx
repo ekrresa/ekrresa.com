@@ -1,8 +1,10 @@
+import * as React from 'react'
 import type { AppProps } from 'next/app'
 import { Inter as FontSans } from 'next/font/google'
 import Head from 'next/head'
 
 import '@/styles/globals.css'
+import { Layout } from '@/components/Layout'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -17,14 +19,15 @@ export default function App({ Component, pageProps }: AppProps) {
           font-family: ${fontSans.style.fontFamily};
         }
       `}</style>
-
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Component {...pageProps} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   )
 }

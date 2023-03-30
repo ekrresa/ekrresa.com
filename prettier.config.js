@@ -13,7 +13,7 @@ module.exports = {
     '^@/components/(.*)$',
     '^@/lib/(.*)$',
     '^@/styles/(.*)$',
-    '^~/public/(.*)$',
+    '^~/*(.*)$',
     '^[./]',
   ],
   importOrderSeparation: false,
