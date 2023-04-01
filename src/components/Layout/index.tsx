@@ -6,9 +6,9 @@ import { Header } from './Header'
 interface LayoutProps extends React.PropsWithChildren<{}> {}
 export function Layout(props: LayoutProps) {
   return (
-    <div className="relative flex flex-col min-h-screen bg-smoke-50">
+    <div className="relative flex min-h-screen flex-col bg-smoke-50">
       <Header />
-      <main className="mx-auto w-full flex-1 max-w-5xl px-5">{props.children}</main>
+      <main className="mx-auto w-full max-w-5xl flex-1 px-5">{props.children}</main>
       <Footer />
     </div>
   )

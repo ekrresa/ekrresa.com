@@ -12,7 +12,7 @@ const navList = [
 
 export function Header() {
   return (
-    <header className="mx-auto flex w-full max-w-5xl items-center justify-between py-6 px-5">
+    <header className="mx-auto flex w-full max-w-5xl items-center justify-between px-5 py-6">
       <Link href="/">
         <LogoLight width={48} />
       </Link>
