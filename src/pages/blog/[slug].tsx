@@ -8,7 +8,8 @@ import remarkGfm from 'remark-gfm'
 import { Seo } from '@/components/Seo'
 import { parseDate } from '@/lib/date'
 import { siteMetadata } from '@/lib/metadata'
-import { allPosts, type Post } from '~/.contentlayer/generated'
+import { getPostBySlug, getPostPaths } from '@/lib/posts'
+import { type Post } from '~/.contentlayer/generated'
 
 const siteDomain = process.env.VERCEL_URL || siteMetadata.siteUrl
 
@@ -62,15 +63,19 @@ export default function Article(props: Props) {
 }
 
 export const getStaticProps: GetStaticProps<{ post: Post }> = context => {
-  const post = allPosts.find(post => post.url.includes(context.params?.slug as string))!
+  const post = getPostBySlug(context.params?.slug as string)
+
+  if (!post) {
+    return {
+      notFound: true,
+    }
+  }
 
   return { props: { post } }
 }
 
 export const getStaticPaths: GetStaticPaths = () => {
-  const paths = allPosts
-    .filter(post => post.published)
-    .map(post => ({ params: { slug: post.url.split('/').at(-1)! } }))
+  const paths = getPostPaths()
 
   return { paths, fallback: false }
 }
