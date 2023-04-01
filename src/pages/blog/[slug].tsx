@@ -5,6 +5,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import remarkGfm from 'remark-gfm'
 
+import { Comments } from '@/components/Comments'
 import { Seo } from '@/components/Seo'
 import { parseDate } from '@/lib/date'
 import { siteMetadata } from '@/lib/metadata'
@@ -57,6 +58,10 @@ export default function Article(props: Props) {
         >
           {post.body.raw}
         </ReactMarkdown>
+
+        <div className="mt-20">
+          <Comments />
+        </div>
       </article>
     </Seo>
   )
