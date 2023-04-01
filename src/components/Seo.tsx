@@ -2,7 +2,7 @@ import * as React from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
-import { siteMetadata } from '../lib/metadata'
+import { siteMetadata } from '@/lib/metadata'
 
 interface Props {
   description: string
@@ -24,8 +24,8 @@ export function Seo({
       <Head>
         <title>{title}</title>
         <meta name="robots" content="follow, index" />
-        <meta name="description" content={description} />
 
+        <meta name="description" content={description} />
         {/* Open Graph */}
         <link rel="canonical" href={url} />
         <meta property="og:title" content={title} />
@@ -37,7 +37,7 @@ export function Seo({
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
-        <meta name="twitter:creator" content="@ekrresa_" />
+        <meta name="twitter:creator" content={siteMetadata.twitterHandle} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
         <meta name="twitter:url" content={url} />

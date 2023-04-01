@@ -7,7 +7,7 @@ export const siteMetadata = {
   siteUrl: 'https://ekrresa.com',
   siteRepo: 'https://github.com/ekrresa/ekrresa.com',
   socialBanner:
-    'https://res.cloudinary.com/chuck-huey/image/upload/w_1200,h_630,c_fill,f_auto/v1642528499/personal/Social_Card_qu9k57.jpg',
+    'https://res.cloudinary.com/chuck-huey/image/upload/w_1200,h_630,c_fill,f_auto/v1680364626/personal/Social_Card_-_Blog_post_u6tkb4.png',
   email: 'mailto:ekrresaochuko@gmail.com',
   github: 'https://github.com/ekrresa',
   twitter: 'https://twitter.com/ekrresa_',

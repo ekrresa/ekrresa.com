@@ -9,6 +9,7 @@ module.exports = {
         post: 'rgba(0, 0, 0, 0.1) 0px 4px 12px',
       },
       colors: {
+        linen: '#FCF9F5',
         smoke: {
           50: '#f4f5f4',
           100: '#e2e5e2',
