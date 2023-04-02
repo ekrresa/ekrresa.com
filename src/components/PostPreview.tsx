@@ -15,16 +15,18 @@ export function PostPreview(props: Props) {
     <Link
       href={`/blog/${post.url}`}
       key={post.url}
-      className="rounded-lg transition-shadow hover:shadow-post hover:shadow-smoke-100 md:px-3 md:py-4"
+      className="rounded-lg transition-all duration-500 hover:-translate-y-2"
     >
       <li>
-        <p className="mb-1 text-sm text-smoke-600/90">{parseDate(post.date)}</p>
+        <p className="mb-1 text-sm text-smoke-600/90 dark:text-port-100">
+          {parseDate(post.date)}
+        </p>
 
-        <h3 className="mb-2 inline-block text-2xl font-semibold text-brand-900/90">
+        <h3 className="mb-4 inline-block text-3xl font-bold text-brand-900/90 dark:text-port-50">
           {post.title}
         </h3>
 
-        <p className="leading-6 text-smoke-700">{post.summary}</p>
+        <p className="leading-6 text-smoke-700 dark:text-port-100">{post.summary}</p>
       </li>
     </Link>
   )

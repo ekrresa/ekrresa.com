@@ -23,11 +23,11 @@ export default function Article(props: Props) {
 
   return (
     <Seo title={post.title} description={post.summary} image={ogImageUrl}>
-      <article className="prose-[#162027] prose-p:text-brand-[#162027] prose mx-auto mt-12 dark:prose-invert lg:prose-xl prose-headings:text-brand-800 prose-h1:!leading-tight prose-a:font-medium prose-a:text-[#a13434] prose-a:no-underline prose-a:decoration-[3px] prose-a:transition-all hover:prose-a:underline hover:prose-a:underline-offset-[3px] prose-blockquote:border-l-brand-700 prose-blockquote:bg-red-100 prose-blockquote:py-[0.1rem] prose-blockquote:not-italic prose-code:rounded prose-code:bg-gray-200 prose-li:marker:text-[#162027] md:mt-28">
+      <article className="prose mx-auto mt-12 dark:prose-invert md:prose-lg lg:prose-xl prose-headings:text-brand-800 prose-h1:leading-tight prose-a:font-medium prose-a:text-violet-500 prose-a:decoration-2  prose-a:underline-offset-2 hover:prose-a:underline-offset-4 prose-blockquote:border-l-port-100 prose-blockquote:bg-red-100 prose-blockquote:py-[0.1rem] prose-blockquote:not-italic prose-code:rounded prose-code:bg-gray-200 prose-code:p-1 prose-li:marker:text-[#162027] dark:prose-headings:text-port-50 dark:prose-p:text-port-100 dark:prose-a:text-cyan-400 dark:prose-blockquote:bg-teal-800 dark:prose-blockquote:text-port-950 dark:prose-code:bg-brand-600 md:mt-28">
         <header className="mb-24 border-b-2 border-smoke-100">
           <h1 className="!mb-0">{post.title}</h1>
 
-          <p className="relative text-base text-[#162027]/90">
+          <p className="relative text-base">
             Published on <time dateTime={post.date}>{parseDate(post.date)}</time>
           </p>
         </header>

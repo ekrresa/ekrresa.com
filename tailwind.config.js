@@ -2,6 +2,7 @@ const { fontFamily } = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: ['src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
@@ -9,7 +10,20 @@ module.exports = {
         post: 'rgba(0, 0, 0, 0.1) 0px 4px 12px',
       },
       colors: {
-        linen: '#FCF9F5',
+        linen: {
+          50: '#fcf9f5',
+          100: '#f5ecdf',
+          200: '#ebd7bd',
+          300: '#ddba94',
+          400: '#cf9868',
+          500: '#c57e4a',
+          600: '#b76a3f',
+          700: '#985536',
+          800: '#7b4531',
+          900: '#643a2a',
+          950: '#351d15',
+        },
+
         smoke: {
           50: '#f4f5f4',
           100: '#e2e5e2',
@@ -33,6 +47,20 @@ module.exports = {
           700: '#1b4e89',
           800: '#1a4372',
           900: '#1b395f',
+          950: '#152D4A',
+        },
+        port: {
+          50: '#f2f6fc',
+          100: '#e2eaf7',
+          200: '#ccdbf1',
+          300: '#a9c4e7',
+          400: '#80a5da',
+          500: '#6288cf',
+          600: '#4e6fc2',
+          700: '#445db1',
+          800: '#3c4d91',
+          900: '#344374',
+          950: '#232a46',
         },
       },
       fontFamily: {
