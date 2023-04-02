@@ -12,7 +12,7 @@ export function Comments() {
       repoId="R_kgDOJJVC9A"
       category="Announcements"
       categoryId="DIC_kwDOJJVC9M4CVd8P"
-      mapping="pathname"
+      mapping="url"
       strict="1"
       reactionsEnabled="1"
       emitMetadata="0"
