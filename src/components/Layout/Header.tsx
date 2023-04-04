@@ -27,7 +27,7 @@ export function Header() {
           {navList.map(item => (
             <li key={item.text}>
               <Link
-                className="font-medium uppercase text-brand-900/90 dark:text-port-100"
+                className="font-medium uppercase text-brand-900/90 transition-colors hover:text-brand-900/60 dark:text-port-100 hover:dark:text-port-300"
                 href={item.url}
               >
                 {item.text}
