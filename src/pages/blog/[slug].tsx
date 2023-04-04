@@ -1,5 +1,7 @@
 import * as React from 'react'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
+import Link from 'next/link'
+import { FaHandPointLeft } from 'react-icons/fa'
 import ReactMarkdown from 'react-markdown'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism'
@@ -25,7 +27,16 @@ export default function Article(props: Props) {
     <Seo title={post.title} description={post.summary} image={ogImageUrl}>
       <article className="prose prose-slate mx-auto mt-12 dark:prose-invert md:prose-lg lg:prose-xl prose-h1:leading-tight prose-li:marker:text-brand-800 dark:prose-p:text-port-100 dark:prose-li:marker:text-port-200 md:mt-28">
         <header className="mb-24 border-b-2 border-brand-800 dark:border-smoke-100">
-          <h1 className="!mb-0">{post.title}</h1>
+          <Link
+            href="/blog"
+            className="group inline-flex items-center gap-4 pb-2 text-slate-500 no-underline dark:text-port-200"
+          >
+            <FaHandPointLeft className="text-base transition-all group-hover:text-xl" />
+
+            <p className="text-sm font-medium">Back to all posts</p>
+          </Link>
+
+          <h1 className="!my-0">{post.title}</h1>
 
           <p className="text-base">
             Published on <time dateTime={post.date}>{parseDate(post.date)}</time>
