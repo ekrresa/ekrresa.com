@@ -29,11 +29,13 @@ export default function Article(props: Props) {
         <header className="mb-24 border-b-2 border-brand-800 dark:border-smoke-100">
           <Link
             href="/blog"
-            className="group inline-flex items-center gap-4 pb-2 text-slate-500 no-underline dark:text-port-200"
+            className="group inline-flex items-center gap-4 pb-2 no-underline "
           >
-            <FaHandPointLeft className="text-base transition-all group-hover:text-xl" />
+            <FaHandPointLeft className="fill-slate-600 text-lg transition-all group-hover:text-2xl dark:fill-port-200" />
 
-            <p className="text-sm font-medium">Back to all posts</p>
+            <p className="text-sm font-medium text-slate-500 dark:text-port-200">
+              Back to all articles
+            </p>
           </Link>
 
           <h1 className="!my-0">{post.title}</h1>
