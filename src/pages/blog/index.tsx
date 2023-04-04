@@ -24,7 +24,7 @@ export default function Blog(props: Props) {
     >
       <section className="mt-16">
         <header>
-          <h1 className="pl-8 text-4xl font-bold uppercase">Blog</h1>
+          <h1 className="heading pl-2 text-4xl font-bold uppercase">Blog</h1>
         </header>
 
         <section className="mt-24">

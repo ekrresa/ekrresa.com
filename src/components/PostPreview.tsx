@@ -22,7 +22,7 @@ export function PostPreview(props: Props) {
           {parseDate(post.date)}
         </p>
 
-        <h3 className="mb-4 inline-block text-3xl font-bold text-brand-900/90 dark:text-port-50">
+        <h3 className="heading mb-4 inline-block bg-gradient-to-r text-3xl font-bold">
           {post.title}
         </h3>
 

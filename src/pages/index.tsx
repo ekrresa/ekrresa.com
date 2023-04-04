@@ -26,7 +26,7 @@ export default function Home(props: Props) {
         <p className="text-xl font-semibold uppercase text-brand-600 dark:text-port-50">
           ochuko ekrresa
         </p>
-        <h1 className="-ml-1 mb-4 bg-gradient-to-r from-brand-600 to-brand-800 bg-clip-text text-[4rem] font-semibold uppercase leading-none text-transparent dark:from-linen-50 dark:to-linen-200 md:text-[4.8rem]">
+        <h1 className="heading -ml-1 mb-4 text-[4rem] font-semibold uppercase leading-none md:text-[4.8rem]">
           software engineer
         </h1>
         <p className="max-w-2xl text-lg text-brand-900/90 dark:text-port-100">
