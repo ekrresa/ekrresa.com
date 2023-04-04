@@ -18,7 +18,7 @@ export function PostPreview(props: Props) {
       className="rounded-lg transition-all duration-500 hover:-translate-y-2"
     >
       <li>
-        <p className="mb-1 text-sm text-smoke-600/90 dark:text-port-100">
+        <p className="mb-1 text-sm text-smoke-700 dark:text-port-50">
           {parseDate(post.date)}
         </p>
 
@@ -26,7 +26,7 @@ export function PostPreview(props: Props) {
           {post.title}
         </h3>
 
-        <p className="leading-6 text-smoke-700 dark:text-port-100">{post.summary}</p>
+        <p className="leading-6 text-smoke-700 dark:text-port-50">{post.summary}</p>
       </li>
     </Link>
   )
