@@ -3,8 +3,10 @@ import type { AppProps } from 'next/app'
 import { Inter as FontSans } from 'next/font/google'
 import Head from 'next/head'
 
-import '@/styles/globals.css'
 import { Layout } from '@/components/Layout'
+import '@/styles/globals.css'
+import { useDarkMode } from '@/hooks/useDarkMode'
+import { ThemeProvider } from '@/hooks/useThemeStore'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -12,6 +14,8 @@ const fontSans = FontSans({
 })
 
 export default function App({ Component, pageProps }: AppProps) {
+  const theme = useDarkMode()
+
   return (
     <>
       <style jsx global>{`
@@ -25,9 +29,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <ThemeProvider theme={theme}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ThemeProvider>
     </>
   )
 }

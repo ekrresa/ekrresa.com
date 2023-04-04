@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { BiMoon } from 'react-icons/bi'
 import { TbSunFilled } from 'react-icons/tb'
 
-import { useThemeStore } from '@/lib/theme'
+import { useThemeStore } from '@/hooks/useThemeStore'
 import LogoDark from '~/public/logo-dark.svg'
 import LogoLight from '~/public/logo-light.svg'
 
@@ -14,8 +14,7 @@ const navList = [
 ]
 
 export function Header() {
-  const theme = useThemeStore(state => state.theme)
-  const toggleTheme = useThemeStore(state => state.toggleTheme)
+  const { theme, toggleTheme } = useThemeStore()
 
   return (
     <header className="mx-auto flex w-full max-w-5xl items-center justify-between px-5 py-6">

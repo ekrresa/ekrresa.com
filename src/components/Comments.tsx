@@ -1,9 +1,9 @@
 import Giscus from '@giscus/react'
 
-import { useThemeStore } from '@/lib/theme'
+import { useThemeStore } from '@/hooks/useThemeStore'
 
 export function Comments() {
-  const theme = useThemeStore(state => state.theme)
+  const { theme } = useThemeStore()
 
   return (
     <Giscus
