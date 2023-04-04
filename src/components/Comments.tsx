@@ -1,9 +1,9 @@
 import Giscus from '@giscus/react'
 
-import { useThemeStore } from '@/hooks/useThemeStore'
+import { useTheme } from '@/hooks/useTheme'
 
 export function Comments() {
-  const { theme } = useThemeStore()
+  const { state } = useTheme()
 
   return (
     <Giscus
@@ -17,7 +17,7 @@ export function Comments() {
       reactionsEnabled="1"
       emitMetadata="0"
       inputPosition="top"
-      theme={theme === 'light' ? 'light' : 'dark_dimmed'}
+      theme={state.theme === 'light' ? 'light' : 'dark_dimmed'}
       lang="en"
       loading="lazy"
     />
