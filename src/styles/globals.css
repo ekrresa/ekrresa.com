@@ -27,3 +27,28 @@
 .heading {
   @apply text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-800 dark:from-linen-50 dark:to-linen-200;
 }
+
+/* strong heading inside li elements */
+.prose :where(strong):not(:where([class~='not-prose'] *)) {
+  @apply text-brand-700 dark:text-port-50;
+}
+
+/* Links */
+.prose :where(a):not(:where([class~='not-prose'] *)) {
+  @apply decoration-2 underline-offset-2 text-violet-500 dark:text-cyan-300 hover:underline-offset-4;
+}
+
+/* Code */
+.prose :where(code):not(:where([class~='not-prose'] *)) {
+  @apply bg-gray-200 p-1 rounded-lg dark:bg-brand-600;
+}
+
+/* Blockquotes */
+.prose :where(blockquote):not(:where([class~='not-prose'] *)) {
+  @apply border-l-brand-900/70 dark:border-l-port-100 text-slate-600 dark:text-port-50;
+}
+
+/* Headings */
+.prose :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~='not-prose'] *))) {
+  @apply text-brand-800 dark:text-port-50;
+}
