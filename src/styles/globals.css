@@ -35,7 +35,7 @@
 
 /* Links */
 .prose :where(a):not(:where([class~='not-prose'] *)) {
-  @apply decoration-2 underline-offset-2 text-violet-500 dark:text-cyan-300 hover:underline-offset-4;
+  @apply decoration-2 underline-offset-2 text-violet-500 dark:text-cyan-300 hover:underline-offset-4 transition-all;
 }
 
 /* Code */
