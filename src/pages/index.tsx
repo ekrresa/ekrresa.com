@@ -37,13 +37,13 @@ export default function Home(props: Props) {
         <div className="mt-6 flex gap-6 text-brand-900/90 dark:text-port-100">
           <a
             href={siteMetadata.github}
-            className="uppercase underline decoration-[#df7373] decoration-[3px] underline-offset-[3px]"
+            className="uppercase underline decoration-sunglo-400 decoration-[3px] underline-offset-[3px] transition-all hover:underline-offset-[5px]"
           >
             github
           </a>
           <a
             href={siteMetadata.linkedin}
-            className="uppercase underline decoration-[#df7373] decoration-[3px] underline-offset-[3px]"
+            className="uppercase underline decoration-sunglo-400 decoration-[3px] underline-offset-[3px] transition-all hover:underline-offset-[5px]"
           >
             linkedin
           </a>
