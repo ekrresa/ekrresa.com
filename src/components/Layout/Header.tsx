@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { BiMoon } from 'react-icons/bi'
 import { TbSunFilled } from 'react-icons/tb'
 
@@ -15,6 +16,7 @@ const navList = [
 
 export function Header() {
   const { state, dispatch } = useTheme()
+  const router = useRouter()
 
   return (
     <header className="mx-auto flex w-full max-w-5xl items-center justify-between px-5 py-6">
@@ -27,10 +29,18 @@ export function Header() {
           {navList.map(item => (
             <li key={item.text}>
               <Link
-                className="font-medium uppercase text-brand-900/90 transition-colors hover:text-brand-900/60 dark:text-port-100 hover:dark:text-port-300"
+                className="group relative font-medium uppercase text-brand-900/90 dark:text-port-100"
                 href={item.url}
               >
-                {item.text}
+                <span>{item.text}</span>
+                {router.asPath.includes(item.url) ? (
+                  <span className="absolute -bottom-1 left-0 h-[3px] w-full bg-sunglo-400"></span>
+                ) : (
+                  <>
+                    <span className="absolute -bottom-1 left-1/2 h-[3px] w-0 bg-sunglo-400 group-hover:w-1/2 group-hover:transition-all"></span>
+                    <span className="absolute -bottom-1 right-1/2 h-[3px] w-0 bg-sunglo-400 group-hover:w-1/2 group-hover:transition-all"></span>
+                  </>
+                )}
               </Link>
             </li>
           ))}
@@ -39,9 +49,9 @@ export function Header() {
 
       <button onClick={() => dispatch({ type: 'toggle' })}>
         {state.theme === 'dark' ? (
-          <BiMoon className="text-[1.75rem] dark:text-port-100" />
+          <BiMoon className="text-[1.75rem] transition-all dark:text-port-100 hover:dark:text-port-300" />
         ) : (
-          <TbSunFilled className="text-[1.75rem]" />
+          <TbSunFilled className="text-[1.75rem] transition-all hover:text-brand-900/80" />
         )}
       </button>
     </header>
