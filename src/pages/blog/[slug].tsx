@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { FaHandPointLeft } from 'react-icons/fa'
 import ReactMarkdown from 'react-markdown'
@@ -7,12 +8,16 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import remarkGfm from 'remark-gfm'
 
-import { Comments } from '@/components/Comments'
 import { Seo } from '@/components/Seo'
 import { parseDate } from '@/lib/date'
 import { siteMetadata } from '@/lib/metadata'
 import { getPostBySlug, getPostPaths } from '@/lib/posts'
 import { type Post } from '~/.contentlayer/generated'
+
+const Comments = dynamic(
+  () => import('../../components/Comments').then(mod => mod.Comments),
+  { ssr: false }
+)
 
 const siteDomain = process.env.VERCEL_URL || siteMetadata.siteUrl
 
