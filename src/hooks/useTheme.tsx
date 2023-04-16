@@ -82,11 +82,11 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     localStorage.setItem('app-theme', state.theme)
   }, [state.theme])
 
-  if (!state.theme) return null
-
   const value = { state, dispatch }
 
-  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+  return state.theme ? (
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+  ) : null
 }
 
 export function useTheme() {
