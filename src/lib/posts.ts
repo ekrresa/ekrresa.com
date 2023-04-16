@@ -30,7 +30,7 @@ export function getPublishedPosts(): PostPreviewType[] {
       }
     })
     .sort((a, b) => {
-      return Number(dayjs(a.date).isBefore(b.date))
+      return b.date.localeCompare(a.date)
     })
 
   return posts
