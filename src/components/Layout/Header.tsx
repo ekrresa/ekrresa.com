@@ -19,7 +19,7 @@ export function Header() {
   const router = useRouter()
 
   return (
-    <header className="mx-auto flex w-full max-w-5xl items-center justify-between px-5 py-6">
+    <header className="mx-auto flex w-full max-w-[70rem] items-center justify-between px-5 py-6">
       <Link href="/">
         {state.theme === 'light' ? <LogoLight width={48} /> : <LogoDark width={48} />}
       </Link>

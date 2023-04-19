@@ -1,4 +1,4 @@
-const { fontFamily } = require('tailwindcss/defaultTheme')
+const { fontFamily, screens } = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -78,6 +78,13 @@ module.exports = {
       },
       fontFamily: {
         sans: ['var(--font-inter)', ...fontFamily.sans],
+      },
+      fontSize: {
+        'main-heading': 'clamp(2.5rem, 2.0395rem + 2.6316vw, 5rem)',
+      },
+      screens: {
+        xs: '280px',
+        ...screens,
       },
       typography: {
         DEFAULT: {
