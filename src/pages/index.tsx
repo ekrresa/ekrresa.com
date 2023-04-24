@@ -49,7 +49,7 @@ export default function Home(props: Props) {
         </div>
       </section>
 
-      <section className="mt-32 md:mt-48">
+      <section className="mt-40 md:mt-48">
         <ul className="grid grid-cols-1 gap-x-10 gap-y-16 md:grid-cols-2">
           {posts.map((post, index) => (
             <PostPreview

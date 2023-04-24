@@ -6,12 +6,15 @@ import { TbSunFilled } from 'react-icons/tb'
 import { useTheme } from '@/hooks/useTheme'
 import LogoDark from '~/public/logo-dark.svg'
 import LogoLight from '~/public/logo-light.svg'
+import { MobileNav } from './MobileNav'
 
 const navList = [
   { text: 'blog', url: '/blog' },
   { text: 'projects', url: '/projects' },
   { text: 'about', url: '/about' },
-]
+] as const
+
+export type NavList = typeof navList
 
 export function Header() {
   const { state, dispatch } = useTheme()
@@ -20,11 +23,12 @@ export function Header() {
   return (
     <header className="border-b border-zinc-200 dark:border-smoke-600">
       <div className="mx-auto flex max-w-[70rem] items-center justify-between p-5">
+        <MobileNav list={navList} />
         <Link href="/">
           {state.theme === 'light' ? <LogoLight width={48} /> : <LogoDark width={48} />}
         </Link>
 
-        <nav>
+        <nav className="hidden sm:block">
           <ul className="flex items-center justify-between gap-4">
             {navList.map(item => {
               const isActive = router.asPath.includes(item.url)
