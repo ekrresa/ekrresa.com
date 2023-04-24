@@ -13,6 +13,16 @@ export function MobileNav(props: MobileNavProps) {
 
   const [open, toggleOpen] = React.useState(false)
 
+  React.useLayoutEffect(() => {
+    if (open) {
+      // lock body scroll
+      document.body.style.overflow = 'hidden'
+    } else {
+      // unlock body scroll
+      document.body.style.overflow = 'visible'
+    }
+  }, [open])
+
   return (
     <>
       <NavToggle open={open} toggle={() => toggleOpen(o => !o)} />
