@@ -23,19 +23,17 @@ export default function Home(props: Props) {
       description={siteMetadata.description}
       image={siteMetadata.socialBanner}
     >
-      <section className="mt-32 md:mt-48 md:pb-12 md:text-center">
-        <p className="text-xl font-semibold uppercase text-brand-600 dark:text-port-50">
-          ochuko ekrresa
-        </p>
+      <section className="mt-24 text-center md:mt-48 md:pb-12">
+        <p className="heading text-xl font-semibold uppercase">ochuko ekrresa</p>
         <h1 className="heading -ml-1 mb-4 text-main-heading font-extrabold uppercase leading-none">
           software engineer
         </h1>
-        <p className="max-w-2xl text-lg text-brand-900/90 dark:text-port-100 md:mx-auto">
+        <p className="mx-auto max-w-2xl text-lg text-brand-900/90 dark:text-port-100">
           Hi, my name is Ochuko and this is my digital garden. I&apos;ve learnt a lot over
           the years working on interesting projects and I share my knowledge here.
         </p>
 
-        <div className="mt-6 flex gap-6 text-brand-900/90 dark:text-port-100 md:justify-center">
+        <div className="mt-6 flex justify-center gap-6 text-brand-900/90 dark:text-port-100">
           <a
             href={siteMetadata.github}
             className="uppercase underline decoration-sunglo-400 decoration-[3px] underline-offset-[3px] transition-all hover:underline-offset-[5px]"

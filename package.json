@@ -15,6 +15,7 @@
     "@tanstack/react-query-devtools": "^4.26.1",
     "contentlayer": "^0.3.1",
     "dayjs": "^1.11.7",
+    "framer-motion": "^10.12.4",
     "next": "13.3.0",
     "next-contentlayer": "^0.3.1",
     "next-sitemap": "^4.0.6",
