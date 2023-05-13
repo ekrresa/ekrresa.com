@@ -2,9 +2,9 @@ export const siteMetadata = {
   title: 'Ochuko Ekrresa – Software Engineer',
   author: 'Ochuko Ekrresa',
   description:
-    'Ochuko Ekrresa is a software engineer with great skills in building experiences for the web. His blog features content on frontend development.',
+    'Ochuko is a software engineer with great skills in building products for the web. His blog features content on software development.',
   language: 'en-us',
-  siteUrl: 'https://ekrresa.com',
+  siteUrl: 'https://www.ekrresa.com',
   siteRepo: 'https://github.com/ekrresa/ekrresa.com',
   socialBanner:
     'https://res.cloudinary.com/chuck-huey/image/upload/w_1200,h_630,c_fill,f_auto/v1680364626/personal/Social_Card_-_Blog_post_u6tkb4.png',
