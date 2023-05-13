@@ -22,7 +22,7 @@ export default function Blog(props: Props) {
       description={siteMetadata.description}
       image={siteMetadata.socialBanner}
     >
-      <section className="mt-16">
+      <section className="mt-12">
         <header>
           <h1 className="heading pl-2 text-center text-4xl font-bold uppercase">Blog</h1>
         </header>
