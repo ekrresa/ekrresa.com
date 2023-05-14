@@ -21,7 +21,7 @@ export function Header() {
   const router = useRouter()
 
   return (
-    <header className="border-b border-zinc-200 dark:border-smoke-600">
+    <header className="border-b border-zinc-200 dark:border-[#364e69]">
       <div className="mx-auto flex max-w-[70rem] items-center justify-between p-5">
         <MobileNav list={navList} />
         <Link href="/">

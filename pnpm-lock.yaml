@@ -20,7 +20,6 @@ specifiers:
   framer-motion: ^10.12.4
   next: 13.3.0
   next-contentlayer: ^0.3.1
-  next-sitemap: ^4.0.6
   postcss: ^8.4.21
   prettier: ^2.8.4
   react: 18.2.0
@@ -42,7 +41,6 @@ dependencies:
   framer-motion: 10.12.4_biqbaboplfbrettd7655fr4n2y
   next: 13.3.0_zehrthmpe6s5g22xochi75x3hi
   next-contentlayer: 0.3.1_tacawggb34mk4b7wlnxzlxw73q
-  next-sitemap: 4.0.6_fou55egned3gok3n65buiqvr4a
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.8.0_react@18.2.0
@@ -1439,10 +1437,6 @@ packages:
       oo-ascii-tree: 1.79.0
       ts-pattern: 4.2.2
       type-fest: 3.7.2
-    dev: false
-
-  /@corex/deepmerge/4.0.37:
-    resolution: {integrity: sha512-PX90bEnrLdxd5e6rSFWsghExMuSw0Uov3fWJuuaoFuUQIS/446diu/4seExK5b+43L+SOBbd2uBGwYUkG1JfCw==}
     dev: false
 
   /@effect-ts/core/0.60.5:
@@ -5454,6 +5448,7 @@ packages:
 
   /minimist/1.2.8:
     resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
+    dev: true
 
   /mri/1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
@@ -5501,20 +5496,6 @@ packages:
       - esbuild
       - markdown-wasm
       - supports-color
-    dev: false
-
-  /next-sitemap/4.0.6_fou55egned3gok3n65buiqvr4a:
-    resolution: {integrity: sha512-pZ9tynYe6mRR189qZqcOlWVgM1Gxo07BJQW0AjerKmLwQOt+6FQMdaDgifgCt6jDT3Y3EG/+NUDDZRcd0gbPkA==}
-    engines: {node: '>=14.18'}
-    hasBin: true
-    peerDependencies:
-      '@next/env': '*'
-      next: '*'
-    dependencies:
-      '@corex/deepmerge': 4.0.37
-      '@next/env': 13.3.0
-      minimist: 1.2.8
-      next: 13.3.0_zehrthmpe6s5g22xochi75x3hi
     dev: false
 
   /next/13.3.0_zehrthmpe6s5g22xochi75x3hi:
