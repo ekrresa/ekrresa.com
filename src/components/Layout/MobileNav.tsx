@@ -54,7 +54,7 @@ export function MobileNav(props: MobileNavProps) {
             />
 
             <motion.div
-              className="fixed top-8 mx-auto flex w-11/12 items-center rounded-2xl bg-linen-50/90 p-5 backdrop-blur-md dark:bg-brand-900/70"
+              className="fixed top-8 mx-auto flex w-11/12 items-center rounded-2xl bg-linen-50/90 p-5 pb-6 backdrop-blur-md dark:bg-brand-900/70"
               initial={{
                 scale: 1.1,
                 opacity: 0,
@@ -83,8 +83,8 @@ export function MobileNav(props: MobileNavProps) {
               </motion.button>
 
               <nav aria-label="mobile navigation" className="mt-4 w-full">
-                <ul className="flex flex-col gap-8 text-brand-900/90">
-                  <li className="w-full border-b border-brand-800/10 pb-1 dark:border-zinc-300">
+                <ul className="flex flex-col gap-8 text-brand-900/90 dark:text-port-100">
+                  <li className="w-full border-b border-brand-800/10 pb-1 dark:border-zinc-100/40">
                     <Link href="/" className="text-base uppercase">
                       home
                     </Link>
@@ -93,7 +93,7 @@ export function MobileNav(props: MobileNavProps) {
                   {list.map(item => (
                     <li
                       key={item.url}
-                      className="w-full border-b border-brand-800/10 pb-1 dark:border-zinc-300"
+                      className="w-full border-b border-brand-800/10 pb-1 dark:border-zinc-100/40"
                     >
                       <Link href={item.url} className="text-base uppercase">
                         {item.text}
