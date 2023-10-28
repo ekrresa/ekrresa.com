@@ -51,7 +51,7 @@ export function Header() {
 
           <button
             aria-label="Toggle dark mode"
-            className="flex h-10 w-11 items-center justify-center rounded-full text-sunglo-500 shadow-lg ring-1 ring-linen-950/5 backdrop-blur-lg transition-colors hover:text-sunglo-400 dark:text-port-100 dark:ring-[#364e69] hover:dark:text-port-300"
+            className="flex h-10 w-10 items-center justify-center rounded-full text-sunglo-500 shadow-lg ring-1 ring-linen-950/5 backdrop-blur-lg transition-colors hover:text-sunglo-400 dark:text-port-100 dark:ring-[#364e69] hover:dark:text-port-300"
             onClick={() => dispatch({ type: 'toggle' })}
           >
             {state.theme === 'dark' ? (
