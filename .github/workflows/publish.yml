@@ -1,0 +1,55 @@
+name: Publish Article
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Transpile code
+        run: pnpm build:scripts
+
+      - name: Publish
+        run: pnpm publish:article
+        env:
+          CACHE_TOKEN: ${{ secrets.CACHE_TOKEN }}
+          CACHE_URL: ${{ secrets.CACHE_URL }}
+          DEV_TO_API_TOKEN: ${{ secrets.DEV_TO_API_TOKEN }}
+          HASHNODE: ${{ secrets.HASHNODE }}
+          HASHNODE_PUBLICATION: ${{ secrets.HASHNODE_PUBLICATION }}
+          MEDIUM_API_TOKEN: ${{ secrets.MEDIUM_API_TOKEN }}

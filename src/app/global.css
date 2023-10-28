@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-linen-50 dark:bg-brand-950 font-sans antialiased text-brand-800 dark:text-port-50 transition-colors;
+  }
+}
+
+.min-safe-h-screen {
+  /* equivalent to 100dvh in major browsers */
+  min-height: calc(100vh - env(safe-area-inset-bottom, 0) - env(safe-area-inset-top, 0));
+}
+
+@supports (-webkit-touch-callout: none) {
+  .min-safe-h-screen {
+    /* for ios safari 15, safe-area-inset-bottom is 0, so a special fix apply here */
+    min-height: -webkit-fill-available;
+  }
+}
+
+.heading {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-800 dark:from-linen-50 dark:to-linen-100;
+}
+
+/* strong heading inside li elements */
+.prose :where(strong):not(:where([class~='not-prose'] *)) {
+  @apply text-brand-700 dark:text-port-50;
+}
+
+/* Links */
+.prose :where(a):not(:where([class~='not-prose'] *)) {
+  @apply decoration-2 underline-offset-2 text-violet-500 dark:text-cyan-300 hover:underline-offset-4 transition-all;
+}
+
+/* Blockquotes */
+.prose :where(blockquote):not(:where([class~='not-prose'] *)) {
+  @apply border-l-brand-900/70 dark:border-l-port-100 text-slate-600 dark:text-port-50;
+}
+
+/* Headings */
+.prose :is(:where(h1, h2, h3, h4, h5, h6, th):not(:where([class~='not-prose'] *))) {
+  @apply text-brand-800 dark:text-port-50;
+}
+
+/* Line break */
+.prose :where(hr):not(:where([class~='not-prose'] *)) {
+  @apply dark:border-[#364e69];
+}
