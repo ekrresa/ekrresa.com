@@ -9,7 +9,7 @@ export default function Blog() {
   return (
     <section className="mt-12">
       <header>
-        <h1 className="heading pl-2 text-center text-4xl font-bold uppercase">Blog</h1>
+        <h1 className="heading pl-2 text-center text-4xl font-bold capitalize">All Articles</h1>
       </header>
 
       <section className="mt-24">

@@ -1,5 +1,3 @@
-import dayjs from 'dayjs'
-
 import { allPosts, type Post } from '~/.contentlayer/generated'
 
 export type PostPreviewType = Pick<Post, 'date' | 'summary' | 'title' | 'url'>

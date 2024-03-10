@@ -15,15 +15,10 @@ export function PostPreview(props: Props) {
   return (
     <li
       key={post.url}
-      className={twMerge(
-        'rounded-lg transition-all duration-500 hover:-translate-y-2',
-        className,
-      )}
+      className={twMerge('rounded-lg transition-all duration-200 hover:scale-[102%]', className)}
     >
       <Link href={`/blog/${post.url}`}>
-        <p className="mb-1 text-sm text-smoke-700 dark:text-port-50">
-          {parseDate(post.date)}
-        </p>
+        <p className="mb-1 text-sm text-smoke-700 dark:text-port-50">{parseDate(post.date)}</p>
 
         <h2 className="heading mb-4 inline-block bg-gradient-to-r text-3xl font-bold">
           {post.title}
