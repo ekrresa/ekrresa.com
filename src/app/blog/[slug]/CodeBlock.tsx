@@ -19,7 +19,7 @@ export function CodeBlock(props: ReactMarkdownProps) {
     <div className="relative overflow-x-hidden">
       <button
         aria-label="Copy code"
-        className="absolute right-4 top-[3.5rem] text-linen-50"
+        className="absolute right-4 top-[2rem] rounded-md bg-[#282a36] p-1 text-white"
         onClick={async () => {
           if (copied) return
 
@@ -68,7 +68,7 @@ export function CodeBlock(props: ReactMarkdownProps) {
         </AnimatePresence>
       </button>
 
-      <pre>{props.children}</pre>
+      {props.children}
     </div>
   )
 }
