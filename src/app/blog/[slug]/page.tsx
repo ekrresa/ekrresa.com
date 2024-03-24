@@ -2,7 +2,6 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Undo2 } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
 
 import { Comments } from '@/components/Comments'
 import { parseDate } from '@/lib/date'
@@ -96,7 +95,6 @@ export default function Article({ params }: { params: { slug: string } }) {
             },
             pre: CodeBlock,
           }}
-          remarkPlugins={[remarkGfm]}
         >
           {post.body.raw}
         </ReactMarkdown>
