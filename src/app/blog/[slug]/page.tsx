@@ -68,7 +68,7 @@ export default function Article({ params }: { params: { slug: string } }) {
         dangerouslySetInnerHTML={{ __html: post.jsonLDStructure }}
       ></script>
       <article className="prose prose-slate mx-auto mt-12 dark:prose-invert md:prose-lg prose-h1:leading-tight prose-p:text-brand-950 prose-li:marker:text-brand-800 dark:prose-p:text-port-100 dark:prose-li:marker:text-port-200 md:mt-28">
-        <header className="mb-16 border-b-2 border-brand-800 dark:border-smoke-100">
+        <header className="mb-16 border-b-2 border-brand-900 dark:border-smoke-100">
           <Link
             href="/blog"
             className="group inline-flex items-center gap-2 pb-2 !text-brand-800 no-underline dark:!text-port-50"
@@ -82,7 +82,7 @@ export default function Article({ params }: { params: { slug: string } }) {
             {post.title}
           </h1>
 
-          <p className="text-base">
+          <p className="!mb-4 text-base">
             Published on <time dateTime={post.date}>{parseDate(post.date)}</time>
           </p>
         </header>
