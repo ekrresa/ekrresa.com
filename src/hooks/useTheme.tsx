@@ -3,39 +3,18 @@
 import * as React from 'react'
 
 export type Theme = 'light' | 'dark' | null
-type Action = { type: 'light' } | { type: 'dark' } | { type: 'toggle' }
-type Dispatch = (action: Action) => void
-type State = { theme: Theme }
 
 interface ThemeState {
-  state: State
-  dispatch: Dispatch
+  theme: Theme
+  toggleTheme: () => void
 }
 
 const ThemeContext = React.createContext<ThemeState | undefined>(undefined)
 
-function themeReducer(state: State, action: Action): State {
-  switch (action.type) {
-    case 'light': {
-      return { theme: 'light' }
-    }
-    case 'dark': {
-      return { theme: 'dark' }
-    }
-    case 'toggle': {
-      return { theme: state.theme === 'light' ? 'dark' : 'light' }
-    }
-
-    default: {
-      throw new Error('Unhandled action type')
-    }
-  }
-}
-
 type ThemeProviderProps = React.PropsWithChildren<{}>
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  const [state, dispatch] = React.useReducer(themeReducer, { theme: null })
+  const [theme, setTheme] = React.useState<Theme>(null)
 
   useLayoutEffect(() => {
     const persistedState = localStorage.getItem('app-theme')
@@ -44,9 +23,9 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
       persistedState === 'dark' ||
       (!persistedState && window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
-      dispatch({ type: 'dark' })
+      setTheme('dark')
     } else {
-      dispatch({ type: 'light' })
+      setTheme('light')
     }
   }, [])
 
@@ -55,9 +34,9 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 
     const onDarkModeChange = (evt: MediaQueryListEvent) => {
       if (evt.matches) {
-        dispatch({ type: 'dark' })
+        setTheme('dark')
       } else {
-        dispatch({ type: 'light' })
+        setTheme('light')
       }
     }
 
@@ -70,10 +49,10 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 
   // Synchronize theme changes to window & localStorage
   React.useEffect(() => {
-    if (!state.theme) return
+    if (!theme) return
 
     const root = window.document.documentElement
-    const isDark = state.theme === 'dark'
+    const isDark = theme === 'dark'
 
     if (isDark) {
       root.classList.add('dark')
@@ -81,13 +60,16 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
       root.classList.remove('dark')
     }
 
-    localStorage.setItem('app-theme', state.theme)
-  }, [state.theme])
+    localStorage.setItem('app-theme', theme)
+  }, [theme])
 
-  const value = { state, dispatch }
+  const toggleTheme = React.useCallback(
+    () => setTheme(theme => (theme === 'light' ? 'dark' : 'light')),
+    [],
+  )
 
-  return state.theme ? (
-    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+  return theme ? (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>
   ) : null
 }
 

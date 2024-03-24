@@ -16,7 +16,7 @@ const fontSans = FontSans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
-  title: 'Ochuko Ekrresa – Software Engineer, Developer, Writer',
+  title: 'Ochuko Ekrresa – Software Engineer, Developer',
   description: siteMetadata.description,
   openGraph: {
     title: siteMetadata.title,
@@ -56,6 +56,9 @@ export default function Layout({ children }: React.PropsWithChildren<{}>) {
 
       <body className={fontSans.className}>
         <ThemeProvider>
+          <div className="fixed inset-0 flex justify-center">
+            <div className="w-full max-w-7xl bg-romance-50 ring-1 ring-romance-100 transition-colors dark:bg-charcoal dark:ring-stone-400/20"></div>
+          </div>
           <div className="min-safe-h-screen relative flex flex-col">
             <Header />
             <main className="mx-auto w-full max-w-[70rem] flex-1 px-5">{children}</main>

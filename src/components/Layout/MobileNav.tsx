@@ -27,7 +27,7 @@ export function MobileNav(props: MobileNavProps) {
     <>
       <button
         aria-label={open ? 'Close menu' : 'Open menu'}
-        className="rounded-full px-4 py-2 text-center font-medium shadow-lg ring-1 ring-linen-950/5 backdrop-blur-lg transition-colors dark:text-port-100 dark:ring-[#364e69] sm:hidden"
+        className="rounded-full px-4 py-2 text-center font-medium shadow-md shadow-rose-100 ring-1 ring-linen-950/5 backdrop-blur-lg transition-colors dark:text-port-100 dark:shadow-brand-900 dark:ring-[#364e69] sm:hidden"
         onClick={() => toggleOpen(o => !o)}
       >
         {open ? 'Close' : 'Menu'}

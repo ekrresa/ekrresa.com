@@ -7,6 +7,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        charcoal: '#0d141c',
+        cod: '#080705',
         linen: {
           50: '#fcf9f5',
           100: '#f5ecdf',
@@ -19,6 +21,10 @@ module.exports = {
           800: '#7b4531',
           900: '#643a2a',
           950: '#351d15',
+        },
+        romance: {
+          50: '#fcfbfa',
+          100: '#efeae5',
         },
         smoke: {
           50: '#f4f5f4',
@@ -33,17 +39,30 @@ module.exports = {
           900: '#2f3230',
         },
         brand: {
-          50: '#f2f7fd',
-          100: '#e5edf9',
-          200: '#c4daf3',
-          300: '#90bce9',
-          400: '#5599db',
-          500: '#2f7cc8',
-          600: '#2061a9',
-          700: '#1b4e89',
-          800: '#1a4372',
-          900: '#1b395f',
-          950: '#152D4A',
+          50: '#f1f8fe',
+          100: '#e2f1fc',
+          200: '#bde2fa',
+          300: '#83ccf6',
+          400: '#42b2ee',
+          500: '#1999de',
+          600: '#0c7abd',
+          700: '#0b6199',
+          800: '#0d527f',
+          900: '#114569',
+          950: '#0b2c46',
+        },
+        willow: {
+          50: '#f8f3f4',
+          100: '#ece1e3',
+          200: '#dcc5c9',
+          300: '#c29ea4',
+          400: '#a26e76',
+          500: '#87535a',
+          600: '#73474a',
+          700: '#5f3f41',
+          800: '#51393a',
+          900: '#463333',
+          950: '#030202',
         },
         port: {
           50: '#f2f6fc',
@@ -58,7 +77,7 @@ module.exports = {
           900: '#344374',
           950: '#232a46',
         },
-        sunglo: {
+        rose: {
           50: '#fcf4f4',
           100: '#fae6e6',
           200: '#f6d2d2',
@@ -76,7 +95,7 @@ module.exports = {
         sans: ['var(--font-inter)', ...fontFamily.sans],
       },
       fontSize: {
-        'main-heading': 'clamp(2.5rem, 2.0395rem + 2.6316vw, 5rem)',
+        'main-heading': 'clamp(2.5rem, 2.0395rem + 2.6316vw, 4.5rem)',
       },
       typography: {
         DEFAULT: {

@@ -8,44 +8,39 @@ export default function Home() {
   const posts = getPublishedPosts()
 
   return (
-    <div>
-      <section className="mt-24 text-center md:mt-48 md:pb-12">
-        <p className="heading text-xl font-semibold uppercase">ochuko ekrresa</p>
-        <h1 className="heading -ml-1 mb-4 text-main-heading font-extrabold uppercase leading-none">
-          software engineer
+    <>
+      <section className="mx-auto mb-40 mt-24 max-w-5xl md:my-60">
+        <h1 className="mb-4 text-main-heading font-extrabold uppercase leading-tight">
+          ochuko ekrresa
         </h1>
-        <p className="mx-auto max-w-2xl text-lg text-brand-900/90 dark:text-port-100">
-          Hi, my name is Ochuko and this is my digital garden. I&apos;ve learnt a lot over
-          the years working on interesting projects and I share my knowledge here.
+        <p className="max-w-4xl text-gray-800 dark:text-port-100 sm:text-lg">
+          Hi, my name is Ochuko and this is my digital garden. Over the years, I have learned a lot
+          while working on interesting projects, and I want to share that knowledge with you.
         </p>
 
-        <div className="mt-6 flex justify-center gap-6 text-brand-900/90 dark:text-port-100">
+        <div className="mt-6 flex gap-6 dark:text-port-100">
           <a
             href={siteMetadata.github}
-            className="uppercase underline decoration-sunglo-400 decoration-[3px] underline-offset-[3px] transition-all hover:underline-offset-[5px]"
+            className="relative uppercase before:absolute before:-bottom-0.5 before:left-0 before:block before:h-1 before:w-full before:origin-top before:scale-y-50 before:bg-rose-400 before:transition-transform before:duration-300 before:content-[''] hover:before:scale-y-75 dark:before:bg-cyan-300"
           >
             github
           </a>
           <a
             href={siteMetadata.linkedin}
-            className="uppercase underline decoration-sunglo-400 decoration-[3px] underline-offset-[3px] transition-all hover:underline-offset-[5px]"
+            className="relative uppercase before:absolute before:-bottom-0.5 before:left-0 before:block before:h-1 before:w-full before:origin-top before:scale-y-50 before:bg-rose-400 before:transition-transform before:duration-300 before:content-[''] hover:before:scale-y-75 dark:before:bg-cyan-300"
           >
             linkedin
           </a>
         </div>
       </section>
 
-      <section className="mt-40 md:mt-48">
+      <section>
         <ul className="grid grid-cols-1 gap-x-10 gap-y-16 md:grid-cols-2">
-          {posts.map((post, index) => (
-            <PostPreview
-              key={post.url}
-              className={index % 2 === 1 ? 'md:text-end' : ''}
-              post={post}
-            />
+          {posts.map(post => (
+            <PostPreview key={post.url} post={post} />
           ))}
         </ul>
       </section>
-    </div>
+    </>
   )
 }
