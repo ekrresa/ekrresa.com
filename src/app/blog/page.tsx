@@ -10,6 +10,9 @@ export default function Blog() {
     <section className="mt-12">
       <header>
         <h1 className="heading pl-2 text-center text-4xl font-bold capitalize">All Articles</h1>
+        <p className="mt-2 text-center text-brand-950 dark:text-port-100 sm:text-lg">
+          Articles about things I&#39;ve learned while working on interesting projects.
+        </p>
       </header>
 
       <section className="mt-24">

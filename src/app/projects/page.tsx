@@ -19,9 +19,12 @@ export default function Projects() {
   const projects = getProjects()
 
   return (
-    <section className="mt-16">
+    <section className="mt-12">
       <header>
         <h1 className="heading text-center text-4xl font-bold capitalize">Projects</h1>
+        <p className="mt-2 text-center text-brand-950 dark:text-port-100 sm:text-lg">
+          Interesting projects that I&#39;ve built. Hope you like them.
+        </p>
       </header>
 
       <section className="mt-24">
