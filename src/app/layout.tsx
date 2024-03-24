@@ -1,6 +1,7 @@
 import * as React from 'react'
 import type { Metadata } from 'next'
 import { Inter as FontSans } from 'next/font/google'
+import Script from 'next/script'
 
 import { ThemeProvider } from '@/hooks/useTheme'
 import { Footer } from '@/components/Layout/Footer'
@@ -55,6 +56,8 @@ export default function Layout({ children }: React.PropsWithChildren<{}>) {
       </head>
 
       <body className={fontSans.className}>
+        <Script src="../lib/noflash.ts" strategy="afterInteractive" />
+
         <ThemeProvider>
           <div className="fixed inset-0 flex justify-center">
             <div className="w-full max-w-7xl bg-romance-50 ring-1 ring-romance-100 transition-colors dark:bg-charcoal dark:ring-stone-400/20"></div>
