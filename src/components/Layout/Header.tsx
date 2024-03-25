@@ -17,7 +17,7 @@ export function Header() {
 
   return (
     <header>
-      <div className="mx-auto flex max-w-[70rem] items-center justify-between px-4 py-5 backdrop:blur-lg">
+      <div className="mx-auto flex max-w-[70rem] items-center justify-between p-5 backdrop:blur-lg">
         <Link
           aria-label="Click to go home"
           className="rounded-full shadow-lg shadow-rose-100 ring-1 ring-linen-900/5 dark:shadow-brand-900 dark:ring-0"

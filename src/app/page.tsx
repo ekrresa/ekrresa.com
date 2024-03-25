@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { PostPreview } from '@/components/PostPreview'
 import { siteMetadata } from '@/lib/metadata'
 import { getPublishedPosts } from '@/lib/posts'
@@ -9,7 +7,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="mx-auto mb-40 mt-24 max-w-5xl md:my-60">
+      <section className="mx-auto mb-40 mt-24 md:my-60">
         <h1 className="mb-4 text-main-heading font-extrabold uppercase leading-tight">
           ochuko ekrresa
         </h1>
