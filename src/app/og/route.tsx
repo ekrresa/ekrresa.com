@@ -1,4 +1,5 @@
-import { ImageResponse, NextRequest } from 'next/server'
+import { ImageResponse } from 'next/og'
+import { NextRequest } from 'next/server'
 
 export const runtime = 'edge'
 
@@ -40,12 +41,7 @@ export async function GET(req: NextRequest) {
               transform: 'translateY(-50%)',
             }}
           >
-            <svg
-              width={389}
-              viewBox="0 0 276 276"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg width={389} viewBox="0 0 276 276" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle
                 cx="138"
                 cy="138"
