@@ -3,14 +3,14 @@
 import * as React from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Check, Copy } from 'lucide-react'
-import type { ReactMarkdownProps } from 'react-markdown/lib/complex-types'
+import type { Components } from 'react-markdown'
 
 import { copyToClipboard } from '@/lib/utils'
 
 const AnimatedCopy = motion(Copy)
 const AnimatedCheck = motion(Check)
 
-export function CodeBlock(props: ReactMarkdownProps) {
+export const CodeBlock: Components['pre'] = ({ children, ...props }) => {
   const codeChunk = (props as any).node.children[0].children[0].value as string
 
   const [copied, setCopied] = React.useState(false)
@@ -68,7 +68,7 @@ export function CodeBlock(props: ReactMarkdownProps) {
         </AnimatePresence>
       </button>
 
-      {props.children}
+      {children}
     </div>
   )
 }

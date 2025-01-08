@@ -1,6 +1,6 @@
 import * as React from 'react'
 import type { Metadata } from 'next'
-import { Inter as FontSans } from 'next/font/google'
+import { Inter as FontSans, Roboto_Mono } from 'next/font/google'
 import Script from 'next/script'
 
 import { ThemeProvider } from '@/hooks/useTheme'
@@ -11,8 +11,16 @@ import { siteMetadata } from '@/lib/metadata'
 import '@/styles/globals.css'
 
 const fontSans = FontSans({
+  display: 'swap',
   subsets: ['latin'],
   variable: '--font-inter',
+})
+
+const fontMono = Roboto_Mono({
+  display: 'swap',
+  subsets: ['latin'],
+  variable: '--font-geist',
+  weight: ['400', '500', '700'],
 })
 
 export const metadata: Metadata = {
@@ -55,7 +63,7 @@ export default function Layout({ children }: React.PropsWithChildren<{}>) {
         <link rel="icon" href="/favicon.ico" />
       </head>
 
-      <body className={fontSans.className}>
+      <body className={`${fontSans.variable} ${fontMono.variable}`}>
         <Script src="../lib/noflash.ts" strategy="afterInteractive" />
 
         <ThemeProvider>

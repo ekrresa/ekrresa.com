@@ -43,11 +43,6 @@ h6 {
   @apply decoration-2 underline-offset-2 text-violet-500 dark:text-cyan-300 hover:underline-offset-4 transition-all;
 }
 
-/* Code */
-.prose :where(code):not(:where([data-bright-theme] *)) {
-  @apply bg-gray-200 p-1 rounded-lg dark:bg-brand-600;
-}
-
 /* Blockquotes */
 .prose :where(blockquote):not(:where([class~='not-prose'] *)) {
   @apply border-l-brand-900/70 dark:border-l-port-100 text-slate-600 dark:text-port-50;

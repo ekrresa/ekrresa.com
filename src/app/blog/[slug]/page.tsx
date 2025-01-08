@@ -1,14 +1,15 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { Code } from 'bright'
 import { Undo2 } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
+import rehypeExternalLinks from 'rehype-external-links'
 
 import { Comments } from '@/components/Comments'
 import { parseDate } from '@/lib/date'
 import { siteMetadata } from '@/lib/metadata'
 import { getPostBySlug, getPostPaths } from '@/lib/posts'
 import { CodeBlock } from './CodeBlock'
-import { CodeHighlighter } from './CodeHighlighter'
 
 export async function generateStaticParams() {
   const paths = getPostPaths()
@@ -88,13 +89,34 @@ export default function Article({ params }: { params: { slug: string } }) {
         </header>
 
         <ReactMarkdown
-          linkTarget="_blank"
           components={{
             code: props => {
-              return <CodeHighlighter {...props} />
+              const { children, className, node, ...rest } = props
+              const match = /language-(\w+)/.exec(className || '')
+
+              if (match) {
+                return (
+                  <Code
+                    //@ts-expect-error line-number-color
+                    style={{ '--line-number-color': '#6272A4' }}
+                    lang="ts"
+                    theme="dracula"
+                    lineNumbers
+                  >
+                    {String(children).replace(/\n$/, '')}
+                  </Code>
+                )
+              }
+
+              return (
+                <code className="rounded-lg border bg-gray-200 px-1 py-0.5 font-normal dark:border-[#3e3c3c] dark:bg-[#151e29]">
+                  {children}
+                </code>
+              )
             },
             pre: CodeBlock,
           }}
+          rehypePlugins={[[rehypeExternalLinks, { target: '_blank', rel: 'noopener noreferrer' }]]}
         >
           {post.content}
         </ReactMarkdown>

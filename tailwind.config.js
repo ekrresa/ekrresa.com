@@ -93,6 +93,7 @@ module.exports = {
       },
       fontFamily: {
         sans: ['var(--font-inter)', ...fontFamily.sans],
+        mono: ['var(--font-geist)', ...fontFamily.mono],
       },
       fontSize: {
         'main-heading': 'clamp(2.5rem, 2.0395rem + 2.6316vw, 4.5rem)',
