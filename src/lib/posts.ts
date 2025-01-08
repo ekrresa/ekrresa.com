@@ -1,4 +1,4 @@
-import { allPosts, type Post } from '~/.contentlayer/generated'
+import { allPosts, type Post } from 'content-collections'
 
 export type PostPreviewType = Pick<Post, 'date' | 'summary' | 'title' | 'url'>
 

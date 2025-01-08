@@ -3,7 +3,7 @@
 import * as React from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Check, Copy } from 'lucide-react'
-import { ReactMarkdownProps } from 'react-markdown/lib/complex-types'
+import type { ReactMarkdownProps } from 'react-markdown/lib/complex-types'
 
 import { copyToClipboard } from '@/lib/utils'
 

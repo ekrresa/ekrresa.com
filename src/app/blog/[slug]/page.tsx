@@ -1,4 +1,4 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Undo2 } from 'lucide-react'
 import ReactMarkdown from 'react-markdown'
@@ -96,7 +96,7 @@ export default function Article({ params }: { params: { slug: string } }) {
             pre: CodeBlock,
           }}
         >
-          {post.body.raw}
+          {post.content}
         </ReactMarkdown>
 
         <div className="mt-20">

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Code } from 'bright'
-import { CodeProps } from 'react-markdown/lib/ast-to-react'
+import type { CodeProps } from 'react-markdown/lib/ast-to-react'
 
 export async function CodeHighlighter({ inline, children }: CodeProps) {
   if (!inline) {
