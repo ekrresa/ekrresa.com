@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import { parseDate } from '@/lib/date'
+
 import { type Post } from '~/.content-collections/generated'
 
 type PostPreviewType = Pick<Post, 'date' | 'summary' | 'title' | 'url'>

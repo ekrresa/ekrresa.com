@@ -6,10 +6,11 @@ import { SunDimIcon } from 'lucide-react'
 
 import { useTheme } from '@/hooks/useTheme'
 import { appNavLinks } from '@/lib/utils'
+import { MobileNav } from './MobileNav'
+
 import DarkMoonIcon from '~/public/dark-moon.svg'
 import LogoDark from '~/public/logo-dark.svg'
 import LogoLight from '~/public/logo-light.svg'
-import { MobileNav } from './MobileNav'
 
 export function Header() {
   const pathname = usePathname()

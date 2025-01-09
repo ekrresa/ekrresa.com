@@ -141,8 +141,7 @@ React.useLayoutEffect(() => {
   try {
     const localStorageValue = localStorage.getItem(key)
 
-    initialValue =
-      localStorageValue !== null ? parseJSON(localStorageValue) : initialValue
+    initialValue = localStorageValue !== null ? parseJSON(localStorageValue) : initialValue
 
     setValue(initialValue)
   } catch (error) {
