@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { PostContent } from './utils'
+import type { PostContent } from './utils'
 
 const HASHNODE_API_TOKEN = process.env.HASHNODE_API_TOKEN
 const HASHNODE_PUBLICATION_ID = process.env.HASHNODE_PUBLICATION_ID

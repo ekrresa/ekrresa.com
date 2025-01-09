@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
 import { X } from 'lucide-react'
 
-import { AppNavLinks } from '@/lib/utils'
+import type { AppNavLinks } from '@/lib/utils'
 
 interface MobileNavProps {
   list: AppNavLinks

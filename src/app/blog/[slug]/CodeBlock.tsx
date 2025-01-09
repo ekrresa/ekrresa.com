@@ -44,7 +44,7 @@ export const CodeBlock: Components['pre'] = ({ children, ...props }) => {
                 opacity: 0,
                 scale: 0,
               }}
-              size={20}
+              size={18}
               strokeWidth={1.5}
             />
           ) : (
@@ -61,8 +61,8 @@ export const CodeBlock: Components['pre'] = ({ children, ...props }) => {
                 opacity: 0,
                 scale: 0,
               }}
-              size={20}
-              strokeWidth={1.5}
+              size={18}
+              strokeWidth={1}
             />
           )}
         </AnimatePresence>

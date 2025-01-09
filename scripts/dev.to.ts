@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import { PostContent } from './utils'
+import type { PostContent } from './utils'
 
 const DEV_TO_API_TOKEN = process.env.DEV_TO_API_TOKEN
 

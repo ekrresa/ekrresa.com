@@ -1,6 +1,5 @@
 import { createArticleOnDevTo } from './dev.to'
 import { createArticleOnHashnode } from './hashnode'
-import { createArticleOnMedium } from './medium'
 import {
   checkIfPostIsPublished,
   getMarkdownChangedFiles,
@@ -35,9 +34,7 @@ async function publishArticle() {
 
     const hashnodeResult = createArticleOnHashnode(post)
 
-    const mediumResult = createArticleOnMedium(post)
-
-    const result = await Promise.allSettled([devToResult, hashnodeResult, mediumResult])
+    const result = await Promise.allSettled([devToResult, hashnodeResult])
 
     const payload = {}
 

@@ -23,32 +23,34 @@ The NextAuth.js configuration is done by creating a file called `[...nextauth].j
 
 Below is an example of a sample NextAuth.js configuration.
 
-    import NextAuth from "next-auth";
-    import CredentialsProvider from "next-auth/providers/credentials";
+```js
+import NextAuth from 'next-auth'
+import CredentialsProvider from 'next-auth/providers/credentials'
 
-    export default NextAuth({
-      providers: [
-        CredentialsProvider({
-          id: "login",
-          async authorize(credentials) {
-    		  //...
-    		},
-        }),
-      ],
-      callbacks: {
-        async signIn({ user }) {
-          //...
-        },
-        async session({ session, token }) {
-    	    //...
-    	  },
-        async jwt({ token, user }) {
-    		//...
-    	  },
+export default NextAuth({
+  providers: [
+    CredentialsProvider({
+      id: 'login',
+      async authorize(credentials) {
+        //...
       },
-      // use env variable in production
-      secret: "looselipssinkships",
-    });
+    }),
+  ],
+  callbacks: {
+    async signIn({ user }) {
+      //...
+    },
+    async session({ session, token }) {
+      //...
+    },
+    async jwt({ token, user }) {
+      //...
+    },
+  },
+  // use env variable in production
+  secret: 'looselipssinkships',
+})
+```
 
 In a minute I’m going to explain the purpose of each option in the configuration object. While the configuration object can take in more options, we will only be looking at the options that are relevant to the goals of this article.
 
@@ -108,50 +110,53 @@ export default function App({ Component, pageProps }) {
 
 Below is the configuration used for this article.
 
-    import NextAuth from "next-auth";
-    import CredentialsProvider from "next-auth/providers/credentials";
-    import * as Auth from "../../../lib/auth";
+```js
+import NextAuth from 'next-auth'
+import CredentialsProvider from 'next-auth/providers/credentials'
 
-    export default NextAuth({
-      providers: [
-        CredentialsProvider({
-          id: "login",
-          async authorize(credentials) {
-            try {
-              return await Auth.login(credentials);
-            } catch (error) {
-              throw new Error(error.message);
-            }
-          },
-        }),
-        CredentialsProvider({
-          id: "signup",
-          async authorize(credentials) {
-            try {
-              return await Auth.signup(credentials);
-            } catch (error) {
-              throw new Error(error.message);
-            }
-          },
-        }),
-      ],
-      callbacks: {
-        async signIn({ user }) {
-          if (user) return true;
+import * as Auth from '../../../lib/auth'
 
-          return false;
-        },
-        async session({ session }) {
-          session.user.isLoggedIn = true;
-          return session;
-        },
-        async jwt({ token, user }) {
-          return token;
-        },
+export default NextAuth({
+  providers: [
+    CredentialsProvider({
+      id: 'login',
+      async authorize(credentials) {
+        try {
+          return await Auth.login(credentials)
+        } catch (error) {
+          throw new Error(error.message)
+        }
       },
-      // use env variable in production
-      secret: "looselipssinkships",
-    });
+    }),
+    CredentialsProvider({
+      id: 'signup',
+      async authorize(credentials) {
+        try {
+          return await Auth.signup(credentials)
+        } catch (error) {
+          throw new Error(error.message)
+        }
+      },
+    }),
+  ],
+  callbacks: {
+    async signIn({ user }) {
+      if (user) return true
+
+      return false
+    },
+    async session({ session }) {
+      session.user.isLoggedIn = true
+      return session
+    },
+    async jwt({ token, user }) {
+      return token
+    },
+  },
+  // use env variable in production
+  secret: 'looselipssinkships',
+})
+```
 
 There are two providers defined using `CredentialsProvider` from NextAuth.js. One for login, and one for signup. The Credentials provider is what you need when you want to authenticate against your backend. Each of the providers has an `id` field. The id field is an identifier for each provider definition.
 
@@ -171,13 +176,15 @@ For signup and login, the process is essentially the same. In your signup/login 
 
 The example below showcases making a request to NextAuth.js with the `signIn` function.
 
-     import { signIn } from "next-auth/react";
+```js
+import { signIn } from 'next-auth/react'
 
-     const response = await signIn("login", {
-        email: formData.get("email"),
-        password: formData.get("password"),
-        redirect: false,
-      });
+const response = await signIn('login', {
+  email: formData.get('email'),
+  password: formData.get('password'),
+  redirect: false,
+})
+```
 
 The first argument, `login`, specifies that the provider definition with id login should handle the request.
 
@@ -185,15 +192,21 @@ Setting the `redirect` option to false prevents a page reload so you can handle 
 
 The `signIn` function returns a promise which resolves to this object:
 
-    {
-      error: string | undefined;
-      status: number;
-      ok: boolean;
-      url: string | null;
-    }
+```js
+{
+  error: string | undefined
+  status: number
+  ok: boolean
+  url: string | null
+}
+```
 
 With this object, you can make a decision on whether the user’s authentication was successful or not.
 
 ---
 
 So this is everything about authenticating with your backend using NextAuth.js. I hope this article would prove useful to you. Enjoy!
+
+```
+
+```

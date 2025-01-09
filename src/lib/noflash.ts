@@ -1,7 +1,7 @@
 // Insert this script in your index.html right after the <body> tag.
 // This will help to prevent a flash if dark mode is the default.
 
-import { Theme } from '@/hooks/useTheme'
+import type { Theme } from '@/hooks/useTheme'
 
 ;(function () {
   // Change these if you use something different in your hook.
