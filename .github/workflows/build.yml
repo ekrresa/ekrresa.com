@@ -14,10 +14,10 @@ concurrency:
 jobs:
   lint:
     name: Lint Code
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20]
+        node-version: [22]
 
     steps:
       - name: Checkout Repository
@@ -37,15 +37,15 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Format
+      - name: Lint
         run: pnpm lint
 
   type-check:
     name: Check Typescript
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [20]
+        node-version: [22]
 
     steps:
       - name: Checkout Repository
@@ -65,5 +65,5 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Format
+      - name: Type-Check
         run: pnpm type-check
