@@ -109,7 +109,7 @@ export default function Article({ params }: { params: { slug: string } }) {
               }
 
               return (
-                <code className="rounded-lg border bg-gray-200 px-1 py-0.5 font-normal dark:border-[#3e3c3c] dark:bg-[#151e29]">
+                <code className="rounded-lg border border-rose-100 bg-rose-100 px-1 py-0.5 font-normal text-willow-700 dark:border-rose-100/30 dark:bg-[#151e29] dark:text-rose-200">
                   {children}
                 </code>
               )
