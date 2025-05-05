@@ -35,7 +35,7 @@ h6 {
 
 /* strong heading inside li elements */
 .prose :where(strong):not(:where([class~='not-prose'] *)) {
-  @apply text-brand-700 dark:text-port-50;
+  @apply text-brand-900 dark:text-port-50;
 }
 
 /* Links */
@@ -50,7 +50,8 @@ h6 {
 
 /* Headings */
 .prose :is(:where(h2, h3, h4, h5, h6, th):not(:where([class~='not-prose'] *))) {
-  @apply text-brand-800 dark:text-port-50;
+  @apply text-brand-900 dark:text-port-50;
+  margin-bottom: 0.6em !important;
 }
 
 /* Line break */
