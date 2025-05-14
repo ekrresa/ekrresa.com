@@ -7,6 +7,7 @@ tags:
   - testing
   - localtunnel
   - wifi
+  - mobile
 summary: Discover three simple methods to test your localhost website directly on mobile devices.
 date: 2025-05-04T16:51:42+01:00
 published: true
