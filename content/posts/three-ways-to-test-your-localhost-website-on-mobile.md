@@ -1,5 +1,5 @@
 ---
-title: Three Ways to Test Your Localhost Website on Mobile
+title: Three Ways to Run Your Localhost Website on Mobile
 tags:
   - localhost
   - 'web development'
@@ -8,7 +8,7 @@ tags:
   - localtunnel
   - wifi
   - mobile
-summary: Discover three simple methods to test your localhost website directly on mobile devices.
+summary: Discover three simple methods to access your localhost website directly on mobile devices.
 date: 2025-05-04T16:51:42+01:00
 published: true
 updatedAt:
