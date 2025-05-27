@@ -30,7 +30,6 @@ export async function GET(req: NextRequest) {
             fontFamily: 'Poppins, sans-serif',
             padding: '40px',
             color: '#F2FAF7',
-            border: '20px solid #0B6098',
           }}
         >
           <span
@@ -41,38 +40,39 @@ export async function GET(req: NextRequest) {
               transform: 'translateY(-50%)',
             }}
           >
-            <svg width={389} viewBox="0 0 276 276" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle
-                cx="138"
-                cy="138"
-                r="130"
-                stroke="url(#paint0_linear_622_105)"
-                stroke-width="18"
+            <svg width="376" viewBox="0 0 376 378" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse
+                cx="188"
+                cy="189"
+                rx="180"
+                ry="181"
+                stroke="url(#paint0_linear_1032_62)"
+                stroke-width="16"
                 stroke-miterlimit="3.99933"
               />
               <path
-                d="M65.0879 103.961C65.0879 81.0494 83.6611 62.4762 106.572 62.4762H197.731C199.79 62.4762 201.46 64.1457 201.46 66.2051V66.2051C201.46 89.1164 182.886 107.69 159.975 107.69H68.8168C66.7574 107.69 65.0879 106.02 65.0879 103.961V103.961Z"
+                d="M87.0447 141.607C87.0447 109.707 112.904 83.8477 144.804 83.8477H270.675C273.543 83.8477 275.867 86.1721 275.867 89.0395V89.0395C275.867 120.939 250.007 146.799 218.108 146.799H92.2365C89.3691 146.799 87.0447 144.474 87.0447 141.607V141.607Z"
                 fill="#F2FAF7"
               />
               <path
-                d="M64.7634 170.912C64.7634 168.853 66.4329 167.183 68.4924 167.183H159.651C182.562 167.183 201.135 185.756 201.135 208.668V208.668C201.135 210.727 199.466 212.397 197.406 212.397H106.248C83.3367 212.397 64.7634 193.823 64.7634 170.912V170.912Z"
+                d="M86.5955 234.824C86.5955 231.956 88.9199 229.632 91.7873 229.632H217.659C249.558 229.632 275.418 255.492 275.418 287.391V287.391C275.418 290.258 273.093 292.583 270.226 292.583H144.355C112.455 292.583 86.5955 266.723 86.5955 234.824V234.824Z"
                 fill="#F2FAF7"
               />
               <rect
-                x="49.25"
-                y="118.19"
-                width="137.5"
-                height="39.619"
-                rx="19.8095"
+                x="65.1154"
+                y="161.419"
+                width="190.385"
+                height="55.1619"
+                rx="27.5809"
                 fill="#F2FAF7"
               />
               <defs>
                 <linearGradient
-                  id="paint0_linear_622_105"
-                  x1="138"
+                  id="paint0_linear_1032_62"
+                  x1="188"
                   y1="8"
-                  x2="138"
-                  y2="268"
+                  x2="188"
+                  y2="370"
                   gradientUnits="userSpaceOnUse"
                 >
                   <stop stop-color="#E6E8E6" />
@@ -86,8 +86,7 @@ export async function GET(req: NextRequest) {
 
           <div
             style={{
-              backgroundImage:
-                'linear-gradient(90deg, rgba(21,45,74,0.72) 0%, rgba(21,45,74,1) 100%)',
+              backgroundColor: '#0d1d30f5',
               position: 'absolute',
               left: 0,
               bottom: 0,
