@@ -50,5 +50,12 @@
     "tailwindcss": "^3.4.17",
     "ts-reset@latest": "link:@@total-typescript/ts-reset@latest",
     "typescript": "5.2.2"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@biomejs/biome",
+      "@parcel/watcher",
+      "esbuild"
+    ]
   }
 }

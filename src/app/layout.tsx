@@ -59,7 +59,10 @@ export default function Layout({ children }: React.PropsWithChildren<{}>) {
     <html lang="en">
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="viewport"
+          content="initial-scale=1.0, width=device-width, interactive-widget=resizes-content"
+        />
         <link rel="icon" href="/favicon.ico" />
       </head>
 
