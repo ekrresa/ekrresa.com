@@ -8,5 +8,5 @@ stack:
 summary: A showcase of common mobile menu patterns used in web applications.
 link: 'https://mobile-menu-patterns.vercel.app/'
 archived: false
-order: 1
+order: 2
 ---

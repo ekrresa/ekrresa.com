@@ -8,5 +8,5 @@ stack:
 summary: A solution for converting dates into various formats. Useful if you need to compose a date string.
 link: 'https://datetimedojo.com'
 archived: false
-order: 0
+order: 1
 ---
