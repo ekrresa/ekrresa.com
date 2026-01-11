@@ -66,7 +66,7 @@ export default function Article({ params }: { params: { slug: string } }) {
     <section>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: post.jsonLDStructure }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(post.jsonLDStructure) }}
       ></script>
       <article className="prose prose-slate mx-auto mt-12 dark:prose-invert md:prose-lg prose-h1:leading-tight prose-p:text-brand-950 prose-li:marker:text-brand-800 dark:prose-p:text-port-100 dark:prose-li:marker:text-port-200 md:mt-28">
         <header className="mb-16 border-b-2 border-brand-900 dark:border-smoke-100">
